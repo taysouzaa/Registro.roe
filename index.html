@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Ocorrência Escolar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+    <header class="sticky top-0 bg-white/90 backdrop-blur-md shadow-lg z-50">
+        <nav class="container mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
+            <div class="text-xl sm:text-2xl font-bold gradient-text flex items-center">
+                <span class="mr-2 hidden sm:inline"></span>
+                R.O.E.
+            </div>
+
+            <!-- Controles à direita -->
+            <div class="flex items-center space-x-4">
+                <span class="text-gray-700 dark:text-black-300 font-medium" style="letter-spacing:0.5px;"><strong>Taynara Souza</strong></span>
+            </div>
+
+            <!-- Botão Menu Mobile -->
+            <button id="mobile-menu-button" class="lg:hidden text-gray-700 dark:text-gray-300 hover:text-red-700 dark:hover:text-red-500 transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="projeto" class="container mx-auto px-4 sm:px-6 py-16 sm:py-20 md:py-32 text-center">
+            <div class="glass-card p-8 sm:p-12 rounded-2xl max-w-5xl mx-auto">
+                <span class="inline-block text-3xl mb-6 animate-bounce"></span>
+                <h1 class="text-3xl sm:text-4xl md:text-6xl font-bold gradient-text leading-tight">
+                    R.O.E. - Registro de Ocorrência Escolar
+                </h1>
+                <h2 class="text-xl sm:text-2xl md:text-3xl font-light text-gray-800 mt-4">
+                    Um Projeto de Automação para a Gestão Escolar
+                </h2>
+                <div class="mt-8 space-y-4">
+                    <p class="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
+                        Este projeto, desenvolvido por <strong class="text-red-700">Taynara Correia de Souza</strong> 
+                        para a E.E. Gustavo Peccinini, apresenta um sistema digital para modernizar, padronizar e 
+                        agilizar o registro, análise e encaminhamento de ocorrências no ambiente escolar.
+                    </p>
+                    <p class="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
+                        O R.O.E. substitui processos manuais por uma plataforma centralizada que garante segurança, 
+                        rastreabilidade e eficiência, desde o preenchimento do formulário até o parecer institucional.
+                    </p>
+                </div>
+                <div class="mt-8 flex flex-wrap justify-center gap-4">
+                    <a href="#problema" class="tab-btn tab-btn-active hover-lift">
+                        Conheça o Projeto
+                    </a>
+                    <a href="#tecnologias" class="tab-btn tab-btn-inactive hover-lift">
+                        Ver Tecnologias
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="problema" class="py-20 bg-gray-100">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center text-gray-900">O Problema: Antes vs. Depois</h2>
+                <p class="mt-4 text-lg text-gray-600 text-center max-w-2xl mx-auto">
+                    A gestão manual de ocorrências é um gargalo na administração escolar. O R.O.E. foi projetado para resolver esses problemas críticos.
+                </p>
+                <div class="mt-12 grid md:grid-cols-2 gap-8">
+                    <div class="bg-red-50 border-2 border-red-200 p-8 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-bold text-red-800">ANTES (Processo Manual)</h3>
+                        <ul class="mt-6 space-y-4 text-lg text-gray-700 list-inside">
+                            <li class="flex items-start">
+                                <span class="text-red-700 font-bold mr-3">&#10006;</span>
+                                <div><strong>Lento e Burocrático:</strong> Formulários em papel que se perdem e demoram a ser encaminhados.</div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-red-700 font-bold mr-3">&#10006;</span>
+                                <div><strong>Falta de Padrão:</strong> Informações incompletas ou registradas de formas diferentes por cada professor.</div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-red-700 font-bold mr-3">&#10006;</span>
+                                <div><strong>Sem Rastreabilidade:</strong> Impossível acompanhar o status de uma ocorrência ou gerar relatórios de forma rápida.</div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-red-700 font-bold mr-3">&#10006;</span>
+                                <div><strong>Sobrecarga Administrativa:</strong> Educadores gastam tempo precioso com tarefas manuais e repetitivas.</div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-green-50 border-2 border-green-200 p-8 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-bold text-green-800">DEPOIS (Com o R.O.E.)</h3>
+                        <ul class="mt-6 space-y-4 text-lg text-gray-700 list-inside">
+                            <li class="flex items-start">
+                                <span class="text-green-700 font-bold mr-3">&#10004;</span>
+                                <div><strong>Automatizado e Imediato:</strong> O registro digital é enviado instantaneamente para o setor responsável.</div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-700 font-bold mr-3">&#10004;</span>
+                                <div><strong>Padronizado:</strong> Formulários digitais garantem que todas as informações necessárias sejam coletadas.</div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-700 font-bold mr-3">&#10004;</span>
+                                <div><strong>Rastreabilidade Total:</strong> Cada etapa, do registro ao parecer, gera um histórico completo e consultável.</div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-700 font-bold mr-3">&#10004;</span>
+                                <div><strong>Foco no Pedagógico:</strong> Otimiza o tempo da equipe para que possam focar nos alunos e na tomada de decisão.</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="solucao" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center text-gray-900">A Solução: Como Funciona?</h2>
+                <p class="mt-4 text-lg text-gray-600 text-center max-w-2xl mx-auto">
+                    O sistema automatiza todo o ciclo de vida de uma ocorrência usando dois fluxos principais. Clique para explorar cada fluxo.
+                </p>
+                <div class="mt-12 flex justify-center space-x-4">
+                    <button id="btn-fluxo-1" class="tab-btn tab-btn-active">1. Fluxo de Registro</button>
+                    <button id="btn-fluxo-2" class="tab-btn tab-btn-inactive">2. Fluxo de Parecer</button>
+                </div>
+
+                <div id="diagrama-1" class="mt-12">
+                    <div class="flex flex-col items-center">
+                        <div class="diagram-node diagram-node-main w-full max-w-sm">
+                            <span class="text-sm font-semibold text-red-700">INÍCIO</span>
+                            <h4 class="text-lg font-bold">Formulário Principal</h4>
+                            <p class="text-sm text-gray-600">Professor preenche os dados iniciais da ocorrência.</p>
+                        </div>
+                        <div class="diagram-arrow">&darr;</div>
+                        <div class="diagram-node diagram-node-if w-full max-w-sm">
+                            <span class="text-sm font-semibold text-blue-700">LÓGICA</span>
+                            <h4 class="text-lg font-bold">Nó "Se" (Condicional)</h4>
+                            <p class="text-sm text-gray-600">O sistema classifica: é Disciplinar ou Pedagógica?</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4 grid md:grid-cols-2 gap-6">
+                        <div class="flex flex-col items-center p-4 bg-gray-50 rounded-lg">
+                            <div class="w-full h-8 border-b-2 border-l-2 border-gray-300 rounded-bl-lg md:border-l-0 md:border-t-2 md:rounded-t-lg md:rounded-bl-none"></div>
+                            <h3 class="text-xl font-semibold text-gray-800 my-4">RAMO: DISCIPLINAR</h3>
+                            
+                            <div class="diagram-node diagram-node-action w-full max-w-sm">
+                                <h4 class="text-lg font-bold">Formulário Disciplinar</h4>
+                                <p class="text-sm text-gray-600">Coleta dados específicos desta natureza.</p>
+                            </div>
+                            <div class="diagram-arrow">&darr;</div>
+                            <div class="diagram-node diagram-node-action w-full max-w-sm">
+                                <h4 class="text-lg font-bold">Planilha "dados da ocorrência"</h4>
+                                <p class="text-sm text-gray-600">Salva o registro no banco de dados.</p>
+                            </div>
+                            <div class="diagram-arrow">&darr;</div>
+                            <div class="diagram-node diagram-node-output w-full max-w-sm">
+                                <h4 class="text-lg font-bold">E-mail (Direção)</h4>
+                                <p class="text-sm text-gray-600">Notifica automaticamente o setor responsável.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col items-center p-4 bg-gray-50 rounded-lg">
+                            <div class="w-full h-8 border-b-2 border-r-2 border-gray-300 rounded-br-lg md:border-r-0 md:border-t-2 md:rounded-t-lg md:rounded-br-none"></div>
+                            <h3 class="text-xl font-semibold text-gray-800 my-4">RAMO: PEDAGÓGICA</h3>
+                            
+                             <div class="diagram-node diagram-node-action w-full max-w-sm">
+                                <h4 class="text-lg font-bold">Formulário Pedagógico</h4>
+                                <p class="text-sm text-gray-600">Coleta dados específicos desta natureza.</p>
+                            </div>
+                            <div class="diagram-arrow">&darr;</div>
+                            <div class="diagram-node diagram-node-action w-full max-w-sm">
+                                <h4 class="text-lg font-bold">Planilha "dados da ocorrência"</h4>
+                                <p class="text-sm text-gray-600">Salva o registro no banco de dados.</p>
+                            </div>
+                            <div class="diagram-arrow">&darr;</div>
+                            <div class="diagram-node diagram-node-output w-full max-w-sm">
+                                <h4 class="text-lg font-bold">E-mail (Coordenação)</h4>
+                                <p class="text-sm text-gray-600">Notifica automaticamente o setor responsável.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="diagrama-2" class="mt-12" style="display: none;">
+                    <div class="flex flex-col items-center">
+                        <div class="diagram-node diagram-node-main w-full max-w-sm">
+                            <span class="text-sm font-semibold text-red-700">INÍCIO</span>
+                            <h4 class="text-lg font-bold">Formulário "Escolha do Parecer"</h4>
+                            <p class="text-sm text-gray-600">Gestor seleciona a ocorrência a ser respondida.</p>
+                        </div>
+                        <div class="diagram-arrow">&darr;</div>
+                        <div class="diagram-node diagram-node-if w-full max-w-sm">
+                            <span class="text-sm font-semibold text-blue-700">LÓGICA</span>
+                            <h4 class="text-lg font-bold">Nó "Se" (Condicional)</h4>
+                            <p class="text-sm text-gray-600">Verifica o tipo de parecer (Disciplinar ou Pedagógico).</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 grid md:grid-cols-2 gap-6">
+                        <div class="flex flex-col items-center p-4 bg-gray-50 rounded-lg">
+                            <div class="w-full h-8 border-b-2 border-l-2 border-gray-300 rounded-bl-lg md:border-l-0 md:border-t-2 md:rounded-t-lg md:rounded-bl-none"></div>
+                            <h3 class="text-xl font-semibold text-gray-800 my-4">PARECER: DISCIPLINAR</h3>
+                            
+                            <div class="diagram-node diagram-node-action w-full max-w-sm">
+                                <h4 class="text-lg font-bold">Formulário de Parecer</h4>
+                                <p class="text-sm text-gray-600">Gestor insere a resolução do caso.</p>
+                            </div>
+                            <div class="diagram-arrow">&darr;</div>
+                            <div class="diagram-node diagram-node-action w-full max-w-sm">
+                                <h4 class="text-lg font-bold">Planilha "pla.Disciplinar"</h4>
+                                <p class="text-sm text-gray-600">Salva o parecer no histórico.</p>
+                            </div>
+                            <div class="diagram-arrow">&darr;</div>
+                            <div class="diagram-node diagram-node-output w-full max-w-sm">
+                                <h4 class="text-lg font-bold">E-mail (Envolvidos)</h4>
+                                <p class="text-sm text-gray-600">Notifica sobre a resolução (opcional).</p>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col items-center p-4 bg-gray-50 rounded-lg">
+                            <div class="w-full h-8 border-b-2 border-r-2 border-gray-300 rounded-br-lg md:border-r-0 md:border-t-2 md:rounded-t-lg md:rounded-br-none"></div>
+                            <h3 class="text-xl font-semibold text-gray-800 my-4">PARECER: PEDAGÓGICO</h3>
+                            
+                             <div class="diagram-node diagram-node-action w-full max-w-sm">
+                                <h4 class="text-lg font-bold">Formulário de Parecer</h4>
+                                <p class="text-sm text-gray-600">Gestor insere a resolução do caso.</p>
+                            </div>
+                            <div class="diagram-arrow">&darr;</div>
+                            <div class="diagram-node diagram-node-action w-full max-w-sm">
+                                <h4 class="text-lg font-bold">Planilha "pla.pedagógico"</h4>
+                                <p class="text-sm text-gray-600">Salva o parecer no histórico.</p>
+                            </div>
+                            <div class="diagram-arrow">&darr;</div>
+                            <div class="diagram-node diagram-node-output w-full max-w-sm">
+                                <h4 class="text-lg font-bold">E-mail (Envolvidos)</h4>
+                                <p class="text-sm text-gray-600">Notifica sobre a resolução (opcional).</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="funcionalidades" class="py-20 bg-gray-100">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center text-gray-900">Funcionalidades Principais</h2>
+                <p class="mt-4 text-lg text-gray-600 text-center max-w-2xl mx-auto">
+                    O R.O.E. foi projetado como uma ferramenta completa, indo além do simples registro e oferecendo recursos essenciais para a gestão.
+                </p>
+                <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <span class="text-4xl">&#128196;</span>
+                        <h3 class="text-2xl font-bold mt-4">Registro Digital e Padrão</h3>
+                        <p class="mt-2 text-gray-600">Formulários intuitivos que guiam o preenchimento, garantindo a coleta de todas as informações necessárias.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <span class="text-4xl">&#128203;</span>
+                        <h3 class="text-2xl font-bold mt-4">Categorização Automática</h3>
+                        <p class="mt-2 text-gray-600">O sistema classifica as ocorrências, facilitando a triagem e a análise futura dos dados.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <span class="text-4xl">&#9993;</span>
+                        <h3 class="text-2xl font-bold mt-4">Notificações Instantâneas</h3>
+                        <p class="mt-2 text-gray-600">A coordenação e a direção são notificadas por e-mail assim que um novo registro é feito, agilizando a resposta.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <span class="text-4xl">&#128214;</span>
+                        <h3 class="text-2xl font-bold mt-4">Histórico Centralizado</h3>
+                        <p class="mt-2 text-gray-600">Todos os registros e pareceres são armazenados em um repositório seguro e de fácil consulta.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <span class="text-4xl">&#128200;</span>
+                        <h3 class="text-2xl font-bold mt-4">Geração de Relatórios</h3>
+                        <p class="mt-2 text-gray-600">Capacidade de extrair dados para relatórios, identificando padrões, horários ou turmas com maior incidência.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <span class="text-4xl">&#128161;</span>
+                        <h3 class="text-2xl font-bold mt-4">Suporte à Decisão</h3>
+                        <p class="mt-2 text-gray-600">Os dados fornecem uma base sólida para intervenções pedagógicas e administrativas preventivas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="impacto" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center text-gray-900">Impacto Estratégico na Gestão</h2>
+                <p class="mt-4 text-lg text-gray-600 text-center max-w-2xl mx-auto">
+                    Mais do que automatizar tarefas, o R.O.E. se torna uma ferramenta estratégica que gera valor para a escola.
+                </p>
+                <div class="mt-12 grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <div class="chart-container">
+                            <canvas id="impactChart"></canvas>
+                        </div>
+                        <p class="text-center text-sm text-gray-500 mt-2">Gráfico de exemplo: Total de Ocorrências por Mês/Tipo (Dados Fictícios)</p>
+                    </div>
+                    <div class="space-y-6">
+                        <h3 class="text-2xl font-bold text-gray-800">Da Reação para a Prevenção</h3>
+                        <p class="text-lg text-gray-600">Com relatórios claros, a gestão escolar pode parar de apenas "apagar incêndios" e começar a identificar as causas-raiz dos problemas.</p>
+                        <div class="bg-gray-50 p-6 rounded-lg border">
+                            <h4 class="text-xl font-semibold text-red-700">Análise de Padrões</h4>
+                            <p class="mt-2 text-gray-600">O sistema permite identificar se há um aumento de ocorrências disciplinares em dias específicos, ou se problemas pedagógicos se concentram em determinadas turmas.</p>
+                        </div>
+                        <div class="bg-gray-50 p-6 rounded-lg border">
+                            <h4 class="text-xl font-semibold text-red-700">Intervenção Pedagógica</h4>
+                            <p class="mt-2 text-gray-600">Os dados dão suporte à criação de políticas educacionais e intervenções preventivas, fortalecendo a comunicação interna e melhorando o ambiente escolar.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+         <section id="tecnologias" class="py-20 bg-gradient-to-br from-gray-50 to-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center text-gray-900 mb-8">Tecnologias Utilizadas</h2>
+                <p class="mt-4 text-lg text-gray-600 text-center max-w-2xl mx-auto mb-12">
+                    O R.O.E. foi desenvolvido utilizando tecnologias modernas e confiáveis para garantir eficiência, segurança e facilidade de uso.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="card group">
+                        <div class="bg-orange-50 rounded-full w-16 h-16 flex items-center justify-center mb-6 group-hover:bg-orange-100 transition-colors">
+                            <i class="fas fa-network-wired text-3xl text-orange-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">n8n</h3>
+                        <ul class="space-y-2 text-gray-600">
+                            <li>• Automação de workflows</li>
+                            <li>• Integração de serviços</li>
+                            <li>• Processamento de dados</li>
+                            <li>• Gatilhos automáticos</li>
+                        </ul>
+                    </div>
+                    <div class="card group">
+                        <div class="bg-green-50 rounded-full w-16 h-16 flex items-center justify-center mb-6 group-hover:bg-green-100 transition-colors">
+                            <i class="fas fa-table text-3xl text-green-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">Google Sheets</h3>
+                        <ul class="space-y-2 text-gray-600">
+                            <li>• Armazenamento de dados</li>
+                            <li>• Organização de registros</li>
+                            <li>• Análise em tempo real</li>
+                            <li>• Compartilhamento seguro</li>
+                        </ul>
+                    </div>
+                    <div class="card group">
+                        <div class="bg-red-50 rounded-full w-16 h-16 flex items-center justify-center mb-6 group-hover:bg-red-100 transition-colors">
+                            <i class="fas fa-envelope text-3xl text-red-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">Gmail</h3>
+                        <ul class="space-y-2 text-gray-600">
+                            <li>• Notificações automáticas</li>
+                            <li>• Comunicação integrada</li>
+                            <li>• Histórico de interações</li>
+                            <li>• Alertas personalizados</li>
+                        </ul>
+                    </div>
+                    <div class="card group">
+                        <div class="bg-blue-50 rounded-full w-16 h-16 flex items-center justify-center mb-6 group-hover:bg-blue-100 transition-colors">
+                            <i class="fas fa-cloud text-3xl text-blue-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">Google Cloud</h3>
+                        <ul class="space-y-2 text-gray-600">
+                            <li>• APIs integradas</li>
+                            <li>• Segurança avançada</li>
+                            <li>• Escalabilidade</li>
+                            <li>• Autenticação OAuth</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gradient-to-br from-gray-800 to-gray-900 text-gray-300 py-12 mt-20">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center">
+
+                    <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">R.O.E. - Registro de Ocorrência Escolar</h2>
+                    <p class="text-lg sm:text-xl mb-2">Um projeto de TCC de <strong class="text-white">Taynara Correia de Souza</strong></p>
+                    <p class="text-sm sm:text-base">Escola Estadual Gustavo Peccinini</p>
+                    <p class="text-sm sm:text-base">Curso Técnico Desenvolvimento de Sistemas - 2025</p>
+                </div>
+
+                <div class="mt-8 flex justify-center space-x-6">
+                    <a href="https://github.com/taysouzaa" target="_blank" rel="noopener noreferrer" 
+                       class="social-icon group">
+                        <i class="fab fa-github text-2xl"></i>
+                        <span class="block text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity">GitHub</span>
+                    </a>
+                    <a href="https://www.linkedin.com/feed/" target="_blank" rel="noopener noreferrer"
+                       class="social-icon group">
+                        <i class="fab fa-linkedin text-2xl"></i>
+                        <span class="block text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity">LinkedIn</span>
+                    </a>
+                    <a href="mailto:taynara.souza.dev@gmail.com" class="social-icon group">
+                        <i class="fas fa-envelope text-2xl"></i>
+                        <span class="block text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity">Email</span>
+                    </a>
+                </div>
+
+                <div class="mt-8 pt-8 border-t border-gray-700 text-center">
+                    <p class="text-sm text-gray-400">
+                        Esta é uma aplicação web demonstrativa baseada no Relatório Técnico-Científico do projeto.
+                    </p>
+                    <p class="text-sm text-gray-500 mt-2">
+                        © 2025 R.O.E. Todos os direitos reservados.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="theme.js"></script>
+</body>
+</html>

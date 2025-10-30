@@ -1,0 +1,349 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
+
+/* Theme Variables */
+:root {
+    /* Light Theme Colors */
+    --primary-color: #B91C1C;
+    --primary-hover: #991B1B;
+    --primary-gradient: linear-gradient(135deg, #B91C1C 0%, #7F1D1D 100%);
+    --primary-soft: #FEE2E2;
+    --secondary-color: #1E40AF;
+    --secondary-hover: #1E3A8A;
+    --secondary-gradient: linear-gradient(135deg, #1E40AF 0%, #1E3A8A 100%);
+    --secondary-soft: #DBEAFE;
+    --accent-color: #059669;
+    --accent-hover: #047857;
+    --accent-gradient: linear-gradient(135deg, #059669 0%, #047857 100%);
+    --accent-soft: #DCFCE7;
+    
+    /* Surface Colors */
+    --surface-gradient: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%);
+    --surface-1: #fbf2f2fe;
+    --surface-2: #F8FAFC;
+    --surface-3: #F1F5F9;
+    --surface-accent: #FEF2F2;
+    
+    /* UI Effects */
+    --glass-effect: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --modern-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1);
+    --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    
+    /* Text Colors */
+    --text-primary: #1F2937;
+    --text-secondary: #4B5563;
+    --text-tertiary: #6B7280;
+    --text-on-primary: #FFFFFF;
+    --text-on-secondary: #FFFFFF;
+    
+    /* States */
+    --hover-overlay: rgba(0, 0, 0, 0.05);
+    --active-overlay: rgba(0, 0, 0, 0.1);
+}
+
+
+body {
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+    /* NOVO GRADIENTE: Fundo mais escuro para maior contraste */
+    background: linear-gradient(135deg, #ECEFF1 0%, #DDE1E3 100%); 
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Elementos de Design Tecnológico */
+.tech-circuit {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.1;
+    background-image: 
+        radial-gradient(circle at 100% 15%, rgba(185, 28, 28, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 0% 50%, rgba(30, 64, 175, 0.1) 0%, transparent 50%);
+}
+
+.tech-grid {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: 50px 50px;
+    background-image: 
+        linear-gradient(to right, rgba(185, 28, 28, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(185, 28, 28, 0.05) 1px, transparent 1px);
+    pointer-events: none;
+    z-index: -1;
+}
+
+.tech-accent {
+    position: relative;
+    overflow: hidden;
+}
+
+.tech-accent::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+        from 90deg at 40% 40%,
+        rgba(185, 28, 28, 0) 0deg,
+        rgba(185, 28, 28, 0.1) 90deg,
+        rgba(185, 28, 28, 0) 180deg
+    );
+    animation: rotate 10s linear infinite;
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+h1, h2, h3 {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Efeitos Modernos */
+.glass-card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--modern-shadow);
+}
+
+.gradient-text {
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: bold;
+}
+
+.gradient-border {
+    position: relative;
+    background: white;
+    border-radius: 0.75rem;
+}
+
+.gradient-border::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: var(--primary-gradient);
+    border-radius: 0.85rem;
+    z-index: -1;
+}
+
+/* Animações Globais */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease-out;
+}
+
+/* Efeitos de Hover */
+.hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--modern-shadow);
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Containers e Layout */
+.chart-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 300px;
+    max-height: 400px;
+    transition: all 0.3s ease;
+}
+
+@media (min-width: 768px) {
+    .chart-container {
+        height: 350px;
+    }
+}
+
+/* Navegação */
+.nav-link {
+    position: relative;
+    transition: all 0.3s;
+    padding-bottom: 0.5rem;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover::after, 
+.nav-link.active::after {
+    width: 100%;
+}
+
+.nav-link:hover, 
+.nav-link.active {
+    color: var(--primary-color);
+}
+
+/* Cards e Elementos */
+.card {
+    background-color: white;
+    border-radius: 0.75rem;
+    box-shadow: var(--card-shadow);
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--modern-shadow);
+}
+
+/* Diagrama */
+.diagram-node {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    box-shadow: var(--card-shadow);
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: center;
+}
+
+.diagram-node:hover {
+    transform: scale(1.02);
+}
+
+.diagram-node-main {
+    border: 2px solid var(--primary-color);
+    background: linear-gradient(135deg, #fff 0%, #FEE2E2 100%);
+}
+
+.diagram-node-if {
+    border: 2px solid var(--secondary-color);
+    background: linear-gradient(135deg, #fff 0%, #DBEAFE 100%);
+}
+
+.diagram-node-action {
+    border: 2px solid #9CA3AF;
+    background: linear-gradient(135deg, #fff 0%, #F3F4F6 100%);
+}
+
+.diagram-node-output {
+    border: 2px solid var(--accent-color);
+    background: linear-gradient(135deg, #fff 0%, #DCFCE7 100%);
+}
+
+.diagram-arrow {
+    font-size: 1.875rem;
+    color: #9CA3AF;
+    font-weight: 300;
+    margin: 0.5rem 0;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(5px); }
+}
+
+/* Botões */
+.tab-btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    font-size: 1.125rem;
+    font-weight: 500;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.tab-btn::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: -100%;
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0) 100%);
+    transition: all 0.6s ease;
+}
+
+.tab-btn:hover::after {
+    left: 100%;
+}
+
+.tab-btn-active {
+    background: var(--primary-gradient);
+    color: white;
+    box-shadow: 0 10px 15px -3px rgba(185, 28, 28, 0.3);
+}
+
+.tab-btn-inactive {
+    background-color: #E5E7EB;
+    color: #4B5563;
+}
+
+.tab-btn-inactive:hover {
+    background-color: #D1D5DB;
+    transform: translateY(-2px);
+}
+
+/* Novos elementos modernos */
+.tech-icon {
+    width: 4rem;
+    height: 4rem;
+    background: var(--surface-gradient);
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    transition: all 0.3s ease;
+}
+
+.tech-icon:hover {
+    transform: rotate(10deg) scale(1.1);
+}
+
+.social-icon {
+    font-size: 1.5rem;
+    color: white;
+    transition: all 0.3s ease;
+    margin: 0 0.5rem;
+}
+
+.social-icon:hover {
+    transform: translateY(-3px);
+    color: #E5E7EB;
+}
