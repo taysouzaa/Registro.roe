@@ -7,7 +7,9 @@
 ![Tipo](https://img.shields.io/badge/tipo-página%20de%20apresentação-f59e0b)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
-## Visão do Projeto
+> **Estado:** ativo · **Última revisão:** 2026-08-10
+
+## Visão geral
 
 **Registro.roe** é a landing page de apresentação do projeto de TCC **ROE — Registro de Ocorrência Escolar**, um sistema web desenvolvido para digitalizar e organizar o registro de ocorrências em ambientes escolares.
 
@@ -18,7 +20,7 @@ Esta página apresenta o projeto, sua proposta e o time responsável.
 - Apresenta o projeto ROE de forma clara e profissional.
 - Funciona como portfólio e documentação pública do TCC.
 
-## Stack Técnica
+## Stack
 
 - **Frontend:** HTML5, CSS3, JavaScript (vanilla)
 - **Deploy:** Hospedagem estática
